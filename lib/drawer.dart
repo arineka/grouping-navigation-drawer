@@ -17,30 +17,33 @@ class MyHomePage extends StatelessWidget {
     ),
     
     drawer : buildGroupDrawer(context),
-    body : GridView.count(  
-        crossAxisCount: 2,
-        crossAxisSpacing: 10.0,
-        mainAxisSpacing: 10.0,
-        shrinkWrap: true,
-        children: List.generate(10, (index){
-          return Padding(padding: const EdgeInsets.all(10.0),
-            child: Container(
-              height: 5.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.blue[200],
-              ),
-              child: Text('Materi $index',
-                textAlign: TextAlign.center,
-                style : const TextStyle(color: Colors.black,
-                fontSize: 20.0
-              ),
-              ),
-            )
-          );
-        }
-        )
-      ),
+    body: Center(
+      child: Text('Pemrograman Mobile $title'),
+    ),
+    // body : GridView.count(  
+    //     crossAxisCount: 2,
+    //     crossAxisSpacing: 10.0,
+    //     mainAxisSpacing: 10.0,
+    //     shrinkWrap: true,
+    //     children: List.generate(10, (index){
+    //       return Padding(padding: const EdgeInsets.all(10.0),
+    //         child: Container(
+    //           height: 5.0,
+    //           decoration: BoxDecoration(
+    //             borderRadius: BorderRadius.circular(20.0),
+    //             color: Colors.blue[200],
+    //           ),
+    //           child: Text('Materi $index',
+    //             textAlign: TextAlign.center,
+    //             style : const TextStyle(color: Colors.black,
+    //             fontSize: 20.0
+    //           ),
+    //           ),
+    //         )
+    //       );
+    //     }
+    //     )
+    //   ),
     );
   }
 }
@@ -53,82 +56,104 @@ class MyHomePage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue[900],
             ),
-            child: Text('Arin Eka Rosita',
-              style: TextStyle(color: Colors.white,
-              fontSize: 20.0),
+            child: UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue[900],
+              ),
+              accountName: const Text('Arin Eka Rosita',
+                style: TextStyle(fontSize: 18),
+              ),
+              accountEmail: const Text('arin.xpplg2@gmail.com',),
+              currentAccountPictureSize: Size.square(40),
+              currentAccountPicture: const CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Text('A',
+                style: TextStyle(fontSize: 25.0, color: Colors.blue),
+                ),
+                ),
             ),
+            // child: Text('Arin Eka Rosita',
+            //   style: TextStyle(color: Colors.white,
+            //   fontSize: 20.0),
+            // ),
           ),
-          ExpansionTile(
-            title: Text('Materi'),
-            children: <Widget>[
-              ListTile(
-                title: Text('Materi 1'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Materi 2'),
-                  onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Materi 3'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Materi 4'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Materi 5'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-
-          ExpansionTile(
-            title: Text('Tugas'),
-            children: <Widget>[
-              ListTile(
-                title: Text('Tugas 1'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Tugas 2'),
-                  onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Tugas 3'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Tugas 4'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Tugas 5'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+          const ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Arin'),
+            subtitle: Text('XII RPL 2'),
+            trailing: Icon(Icons.chevron_right),
           )
+          // ExpansionTile(
+          //   title: Text('Materi'),
+          //   children: <Widget>[
+          //     ListTile(
+          //       title: Text('Materi 1'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Materi 2'),
+          //         onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Materi 3'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Materi 4'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Materi 5'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //   ],
+          // ),
+
+          // ExpansionTile(
+          //   title: Text('Tugas'),
+          //   children: <Widget>[
+          //     ListTile(
+          //       title: Text('Tugas 1'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Tugas 2'),
+          //         onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Tugas 3'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Tugas 4'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //     ListTile(
+          //       title: Text('Tugas 5'),
+          //       onTap: () {
+          //         Navigator.pop(context);
+          //       },
+          //     ),
+          //   ],
+          // )
         ],
       ),
     );
